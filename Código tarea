@@ -1,0 +1,64 @@
+/*
+Generar un rango de 0 a 100, incluye el número 100 en el rango.
+Tienes que iterar el rango completo, utilizando la sentencia for para obtener cada número del rango y aplicar las siguientes reglas de impresión.
+Al evaluar cada número debes aplicar las siguientes reglas:
+- Si el número es divisible entre 5, imprime: # el número  + “Bingo!!!”
+- Si el número es par, imprime: # el número + “par!!!”
+- Si el número es impar, imprime: # el número + “impar!!!”
+- Si el número se encuentra dentro de un rango del 30 al 40, imprime: # el número +  “Viva Swift!!!”
+Debes de usar la interpolación de variables para realizar la impresión de cada número.
+La salida de mensajes debes tenerla en la consola.
+*/
+
+import UIKit
+
+
+var rango = 0...100
+var n = "#"
+
+for r in rango
+{
+    if  r % 5 == 0 && r % 2 == 0 //&& r < 30 && r > 40// Cuando es divisible entre 5 y par
+    {
+        print("\(n)\(r)\tBingo y Par!!!")
+    }
+    else if r % 5 == 0 && r % 2 != 0 //&& r < 30 || r > 40// Cuando es  divisible entre 5 e impar
+    {
+        print("\(n)\(r)\tBingo e Impar!!!")
+    }
+    
+    if r % 5 == 0 && r % 2 == 0 && r >= 30 && r <= 40 /// Cuando es divisible entre 5, par y entre 30-40
+    {
+        print("\(n)\(r)\tBingo, Par y Viva Swift!!!")
+    }
+        
+    if r % 5 == 0 && r % 2 != 0 && r >= 30 && r <= 40 // Cuando es divisible entre 5, impar y entre 30-40
+    {
+        print("\(n)\(r)\tBingo e Impar y Viva Swift!!!")
+    }
+
+    else if r < 30 || r > 40 && r % 5 != 0 && r % 2 == 0   // Cuando es solo par
+    {
+       print("\(n)\(r)\tPar!!!")
+    }
+        
+    else if r < 30 || r > 40 && r % 2 != 0  && r % 5 != 0  // Cuando es solo impar
+    {
+        print("\(n)\(r)\tImpar!!!")
+    }
+        
+    else if r % 2 == 0 && r % 5 != 0 && r >= 30 && r <= 40 // Cuando es solo par y 30 -40
+    {
+        print("\(n)\(r)\tPar y Viva Swift!!!")
+    }
+        
+    
+    else if r % 2 != 0  && r % 5 != 0 && r >= 30 && r <= 40 // Cuando es solo impar y 30-40
+    {
+        print("\(n)\(r)\tImpar y Viva Swift!!!")
+    }
+    
+}
+
+
+
